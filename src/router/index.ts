@@ -10,24 +10,48 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: 'Home Page - Achraf zarroug',
+        description: 'Home page for achraf zarroug portfolio'
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: AboutView,
+      meta: {
+        title: 'About me Page - Achraf zarroug',
+        description: 'about me page for achraf zarroug portfolio'
+      }
     },
     {
       path: '/projects',
       name: 'projects',
-      component: ProjectsView
+      component: ProjectsView,
+      meta: {
+        title: 'Projects - Achraf zarroug',
+        description: 'Projects list with live url and github code'
+      }
     },
     {
       path: '/contact',
       name: 'contact',
-      component: ContactView
+      component: ContactView,
+      meta: {
+        title: 'Contact - Achraf zarroug',
+        description: 'Contact achraf zarroug by whatsapp and email'
+      }
     }
   ]
 })
-
+// Mise à jour des meta tags pour chaque route
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title as string || 'Votre Site'
+  const metaDescription = document.querySelector('meta[name="description"]')
+  if (metaDescription) {
+    metaDescription.setAttribute('content', to.meta.description as string || '')
+  }
+  next()
+})
 export default router
