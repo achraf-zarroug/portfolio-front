@@ -46,7 +46,7 @@ const router = createRouter({
   ]
 })
 // Mise à jour des meta tags pour chaque route
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _ , next) => {
   document.title = to.meta.title as string || 'Votre Site'
   const metaDescription = document.querySelector('meta[name="description"]')
   if (metaDescription) {
