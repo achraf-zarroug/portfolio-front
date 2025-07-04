@@ -53,10 +53,3 @@
     }
   ]
 }
-{
-  "scripts": {
-    "build": "vue-tsc && vite build",
-    "dev": "vite",
-    "preview": "vite preview"
-  }
-}
