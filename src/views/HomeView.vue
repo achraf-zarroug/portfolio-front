@@ -149,8 +149,8 @@ const featuredProjects = ref<Project[]>([
     description: 'Une application e-commerce complète avec panier, paiement et gestion des commandes.',
     image: '/projects/pts.jpg',
     technologies: ['.NET 8', 'Vue Js', 'MySQL', 'Docker'],
-    liveUrl: '#',
-    githubUrl: '#'
+    liveUrl: 'https://dr-achraf-zarroug.vercel.app',
+    githubUrl: 'https://github.com/achraf-zarroug/dentiste-frontend'
   },
   {
     id: 2,
