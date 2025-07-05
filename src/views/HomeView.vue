@@ -158,8 +158,8 @@ const featuredProjects = ref<Project[]>([
     description: 'Tableau de bord interactif pour visualiser des données analytiques en temps réel.',
     image: '/projects/Patisserie.jpg',
     technologies: ['Vue Js', 'TypeScript', 'TailwindCss'],
-    liveUrl: '#',
-    githubUrl: '#'
+    liveUrl: 'https://patisserie-pink.vercel.app',
+    githubUrl: 'https://github.com/achraf-zarroug/patisserie-front'
   },
   {
     id: 3,
