@@ -15,7 +15,13 @@
           <div class="relative">
             <div class="w-32 h-32 bg-gradient-to-br from-white to-gray-100 rounded-full shadow-2xl flex items-center justify-center border border-gray-200">
               <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center">
-                <div class="text-white text-3xl">👨‍💻</div>
+                <div class="text-white text-3xl">
+                 <img 
+                  src="/moi.ico" 
+                  alt="Photo de profil"
+                  class="h-10 w-10 rounded-full object-cover"
+                />
+                </div>
               </div>
             </div>
             <div class="absolute -top-2 -right-2 w-8 h-8 bg-teal-400 rounded-full animate-bounce"></div>
@@ -205,8 +211,8 @@ const featuredProjects = ref<Project[]>([
     description: 'Une application e-commerce complète avec panier, paiement et gestion des commandes.',
     image: '/projects/pts.jpg',
     technologies: ['.NET 8', 'Vue Js', 'MySQL', 'Docker'],
-    liveUrl: 'https://dr-achraf-zarroug.vercel.app/',
-    githubUrl: 'https://github.com/achraf-zarroug/dentiste-frontend'
+    liveUrl: '#',
+    githubUrl: '#'
   },
   {
     id: 2,
@@ -214,8 +220,8 @@ const featuredProjects = ref<Project[]>([
     description: 'Tableau de bord interactif pour visualiser des données analytiques en temps réel.',
     image: '/projects/Patisserie.jpg',
     technologies: ['Vue Js', 'TypeScript', 'TailwindCss'],
-    liveUrl: 'https://patisserie-pink.vercel.app/',
-    githubUrl: 'https://github.com/achraf-zarroug/patisserie-front'
+    liveUrl: '#',
+    githubUrl: '#'
   },
   {
     id: 3,
