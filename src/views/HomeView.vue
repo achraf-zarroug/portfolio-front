@@ -19,7 +19,7 @@
                  <img 
                   src="/moi.ico" 
                   alt="Photo de profil"
-                  class="h-10 w-10 rounded-full object-cover"
+                  class="h-20 w-20 rounded-full object-cover"
                 />
                 </div>
               </div>
