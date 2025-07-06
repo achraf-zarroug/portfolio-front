@@ -28,7 +28,7 @@
                 </div>
                 <div class="ml-4">
                   <h3 class="text-lg font-medium text-gray-900">Email</h3>
-                  <p class="text-gray-600">john.doe@email.com</p>
+                  <p class="text-gray-600">achraf.zarroug@hotmail.com</p>
                 </div>
               </div>
 
@@ -40,7 +40,24 @@
                 </div>
                 <div class="ml-4">
                   <h3 class="text-lg font-medium text-gray-900">Téléphone</h3>
-                  <p class="text-gray-600">+33 6 12 34 56 78</p>
+                  <p class="text-gray-600">(+216) 24 231 240</p>
+                  <!-- WhatsApp Contact Button -->
+                <div class="mt-6">
+                  <a
+                  href="https://wa.me/21624231240?text=Bonjour%20Achraf%2C%20je%20souhaite%20discuter%20de%20mon%20projet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg>
+                  Contacter sur WhatsApp
+                </a>
+
+                </div>
+
+
                 </div>
               </div>
 
@@ -53,7 +70,7 @@
                 </div>
                 <div class="ml-4">
                   <h3 class="text-lg font-medium text-gray-900">Localisation</h3>
-                  <p class="text-gray-600">Paris, France</p>
+                  <p class="text-gray-600">Tunis, Tunisie</p>
                 </div>
               </div>
             </div>
@@ -147,23 +164,47 @@
                 :disabled="isSubmitting"
                 class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span v-if="isSubmitting">Envoi en cours...</span>
-                <span v-else>Envoyer le message</span>
+                <template v-if="isSubmitting">
+                  <span class="flex items-center justify-center">
+                    <svg class="animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                    </svg>
+                    Envoi en cours...
+                  </span>
+                </template>
+                <template v-else>Envoyer le message</template>
               </button>
             </form>
 
             <!-- Success Message -->
-            <div v-if="showSuccess" class="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              <div class="flex">
-                <svg class="w-5 h-5 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            <transition name="fade-slide">
+              <div
+                v-if="showSuccess"
+                class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-4 rounded-xl shadow-lg flex items-center space-x-3 z-50"
+              >
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <p>Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.</p>
+                <span class="font-medium">Message envoyé avec succès !</span>
               </div>
-            </div>
+            </transition>
+
           </div>
         </div>
       </div>
+      <a
+  href="https://wa.me/21624231240?text=Bonjour%20Achraf%2C%20je%20souhaite%20discuter%20de%20mon%20projet"
+  class="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg z-50 transition"
+  target="_blank"
+  rel="noopener noreferrer"
+  title="Contacter via WhatsApp"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+</a>
+
     </main>
 
     <AppFooter />
@@ -171,6 +212,7 @@
 </template>
 
 <script setup lang="ts">
+import emailjs from '@emailjs/browser'
 import { ref, reactive } from 'vue'
 import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
@@ -190,6 +232,10 @@ interface SocialLink {
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
 
+const SERVICE_ID = 'service_w2tdwsm'
+const TEMPLATE_ID = 'template_xdbyhhd'
+const PUBLIC_KEY = '9Plxf4zjvq1bnkXpl'
+
 const form = reactive<ContactForm>({
   name: '',
   email: '',
@@ -198,18 +244,24 @@ const form = reactive<ContactForm>({
 })
 
 const socialLinks: SocialLink[] = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/johndoe' },
-  { name: 'GitHub', href: 'https://github.com/johndoe' },
-  { name: 'Twitter', href: 'https://twitter.com/johndoe' }
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/achraf-zarroug/' },
+  { name: 'GitHub', href: 'https://github.com/achraf-zarroug' },
 ]
 
 const submitForm = async () => {
   isSubmitting.value = true
-  
+   const templateParams = {
+    name: form.name,
+    email: form.email,
+    subject: form.subject,
+    message: form.message,
+  }
   try {
     // Simulation d'envoi de formulaire
+    const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
     await new Promise(resolve => setTimeout(resolve, 2000))
-    
+        console.log('Email envoyé', result);
+
     // Reset form
     Object.assign(form, {
       name: '',
@@ -232,3 +284,17 @@ const submitForm = async () => {
   }
 }
 </script>
+<style scoped>
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.4s ease;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
