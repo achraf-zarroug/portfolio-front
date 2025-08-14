@@ -44,10 +44,9 @@ const router = createRouter({
       }
     }
   ],
-   scrollBehavior(to, from, savedPosition) {
-    // Toujours remonter en haut de la page
-    return { top: 0 }
-  }
+   scrollBehavior() {
+  return { top: 0 }
+}
 })
 // Mise à jour des meta tags pour chaque route
 router.beforeEach((to, _ , next) => {
