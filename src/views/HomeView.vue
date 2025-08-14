@@ -30,8 +30,11 @@
         </div>
 
         <div class="max-w-4xl mx-auto">
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fadeInUp">
-            <span class="bg-gradient-to-r from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent">
+          <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fadeInUp">
+            <span class="bg-gradient-to-r from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent animate-pulse">
+              Je suis
+            </span>
+            <span class=" text-gray-600">
               Achraf Zarroug
             </span>
           </h1>
@@ -61,31 +64,10 @@
             </RouterLink>
           </div>
         </div>
-
-        <!-- Statistiques -->
-        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div class="text-center animate-fadeInUp" style="animation-delay: 0.8s;">
-            <div class="text-3xl font-bold text-teal-600 mb-2">+5</div>
-            <div class="text-sm text-gray-500">Années d'expérience</div>
-          </div>
-          <div class="text-center animate-fadeInUp" style="animation-delay: 1s;">
-            <div class="text-3xl font-bold text-teal-600 mb-2">20+</div>
-            <div class="text-sm text-gray-500">Projets livrés</div>
-          </div>
-          <div class="text-center animate-fadeInUp" style="animation-delay: 1.2s;">
-            <div class="text-3xl font-bold text-teal-600 mb-2">10+</div>
-            <div class="text-sm text-gray-500">Stacks maîtrisés</div>
-          </div>
-          <div class="text-center animate-fadeInUp" style="animation-delay: 1.4s;">
-            <div class="text-3xl font-bold text-teal-600 mb-2">100%</div>
-            <div class="text-sm text-gray-500">Clients satisfaits</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-    <!-- Skills Section -->
    <!-- Skills Section -->
 <section class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,11 +189,11 @@ const skills = ref<SkillCategory[]>([
 const featuredProjects = ref<Project[]>([
   {
     id: 1,
-    title: 'Site web pour Dentiste',
-    description: 'Une application e-commerce complète avec panier, paiement et gestion des commandes.',
+    title: 'Site web pour Agence de voyage',
+    description: 'Une platforme de voyage organisés complète avec hotels, paiement et gestion des rôles.',
     image: '/projects/pts.jpg',
     technologies: ['.NET 8', 'Vue Js', 'MySQL', 'Docker'],
-    liveUrl: '#',
+    liveUrl: 'https://ptsvoyages.com/',
     githubUrl: '#'
   },
   {
@@ -220,7 +202,7 @@ const featuredProjects = ref<Project[]>([
     description: 'Tableau de bord interactif pour visualiser des données analytiques en temps réel.',
     image: '/projects/Patisserie.jpg',
     technologies: ['Vue Js', 'TypeScript', 'TailwindCss'],
-    liveUrl: '#',
+    liveUrl: 'https://patisserie-pink.vercel.app/',
     githubUrl: '#'
   },
   {

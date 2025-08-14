@@ -43,7 +43,11 @@ const router = createRouter({
         description: 'Contact achraf zarroug by whatsapp and email'
       }
     }
-  ]
+  ],
+   scrollBehavior(to, from, savedPosition) {
+    // Toujours remonter en haut de la page
+    return { top: 0 }
+  }
 })
 // Mise à jour des meta tags pour chaque route
 router.beforeEach((to, _ , next) => {

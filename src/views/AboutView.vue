@@ -155,7 +155,7 @@ interface SkillCategory {
 }
 
 const yearsOfExperience = computed(() => {
-  const startYear = 2020
+  const startYear = 2023
   const currentYear = new Date().getFullYear()
   return currentYear - startYear
 })
