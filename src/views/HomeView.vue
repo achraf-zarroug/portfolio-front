@@ -68,46 +68,6 @@
     </div>
   </section>
 
-   <!-- Skills Section -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Mes Compétences
-      </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Technologies et outils que je maîtrise pour créer des solutions efficaces
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div
-        v-for="category in skills"
-        :key="category.title"
-        class="text-center"
-      >
-        <div
-          class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-        >
-          <div class="text-4xl mb-4">{{ category.icon }}</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">
-            {{ category.title }}
-          </h3>
-          <div class="flex flex-wrap gap-2 justify-center">
-            <span
-              v-for="skill in category.skills"
-              :key="skill"
-              class="px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full"
-            >
-              {{ skill }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
     <!-- Recent Projects -->
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,11 +112,7 @@ import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 
-interface SkillCategory {
-  title: string
-  icon: string
-  skills: string[]
-}
+
 
 interface Project {
   id: number
@@ -168,23 +124,7 @@ interface Project {
   githubUrl?: string
 }
 
-const skills = ref<SkillCategory[]>([
-  {
-    title: 'Frontend',
-    icon: '🎨',
-    skills: ['Vue.js', 'React', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3']
-  },
-  {
-    title: 'Backend',
-    icon: '⚙️',
-    skills: ['.NET', 'Spring boot', 'Java', 'PostgreSQL', 'MongoDB', 'REST API']
-  },
-  {
-    title: 'Outils',
-    icon: '🛠️',
-    skills: ['Git', 'Docker', 'Ansible', 'Linux', 'Github actions', 'Jenkins']
-  }
-])
+
 
 const featuredProjects = ref<Project[]>([
   {
