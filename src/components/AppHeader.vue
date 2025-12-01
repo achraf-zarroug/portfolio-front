@@ -110,7 +110,6 @@ const route = useRoute()
 const navigation = ref([
   { name: 'Accueil', href: '/' },
   { name: 'À propos', href: '/about' },
-  { name: 'Projets', href: '/projects' }
 ])
 
     return {

@@ -62,9 +62,9 @@ export default defineComponent({
     RouterLink
   },
   setup() {
-    const name = 'John Doe'
-    const email = 'john.doe@email.com'
-    const phone = '+33 6 12 34 56 78'
+    const name = 'Achraf ZARROUG'
+    const email = 'achraf.zarroug@hotmail.com'
+    const phone = '+216 24 231 240'
 
     const navigation = [
       { name: 'Accueil', href: '/' },
@@ -74,8 +74,8 @@ export default defineComponent({
     ]
 
     const socialLinks = [
-      { name: 'LinkedIn', href: '#', icon: 'linkedin' },
-      { name: 'GitHub', href: '#', icon: 'github' },
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/achraf-zarroug/', icon: 'linkedin' },
+      { name: 'GitHub', href: 'https://github.com/achraf-zarroug', icon: 'github' },
       { name: 'Twitter', href: '#', icon: 'twitter' }
     ]
 

@@ -13,13 +13,13 @@
         <!-- Avatar ou logo -->
         <div class="mb-12 flex justify-center">
           <div class="relative">
-            <div class="w-32 h-32 bg-gradient-to-br from-white to-gray-100 rounded-full shadow-2xl flex items-center justify-center border border-gray-200">
-              <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center">
+            <div class="w-52 h-52 bg-gradient-to-br from-white to-gray-100 rounded-full shadow-2xl flex items-center justify-center border border-gray-200">
+              <div class="w-40 h-40 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center">
                 <div class="text-white text-3xl">
                  <img 
                   src="/moi.ico" 
                   alt="Photo de profil"
-                  class="h-20 w-20 rounded-full object-cover"
+                  class="h-42 w-42 rounded-full object-cover"
                 />
                 </div>
               </div>
@@ -32,10 +32,10 @@
         <div class="max-w-4xl mx-auto">
           <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fadeInUp">
             <span class="bg-gradient-to-r from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent animate-pulse">
-              Je suis
+             Achraf
             </span>
             <span class=" text-gray-600">
-              Achraf Zarroug
+               ZARROUG
             </span>
           </h1>
 
@@ -44,7 +44,7 @@
           </p>
 
           <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed animate-fadeInUp" style="animation-delay: 0.4s;">
-            Développeur passionné spécialisé dans les applications web modernes, avec une attention particulière à la qualité du code, la performance et l'expérience utilisateur.
+            Ingénieur en informatique spécialisé dans les applications web modernes, avec une attention particulière à la qualité du code, la performance et l'expérience utilisateur.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style="animation-delay: 0.6s;">
@@ -52,16 +52,11 @@
               to="/projects"
               class="group bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
             >
-              🚀 Voir mes projets
+              📩 Me contacter
               <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </RouterLink>
 
-            <RouterLink
-              to="/contact"
-              class="group border-2 border-teal-500 text-teal-600 hover:bg-teal-500 hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 flex items-center"
-            >
-              📩 Me contacter
-            </RouterLink>
+            
           </div>
         </div>
       </div>
@@ -95,7 +90,8 @@
             hover:to-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl 
             transform hover:-translate-y-0.5"
           >
-            Voir tous les projets
+           📩 Contactez-moi
+              <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </RouterLink>
         </div>
       </div>
@@ -129,20 +125,20 @@ interface Project {
 const featuredProjects = ref<Project[]>([
   {
     id: 1,
-    title: 'Site web pour Agence de voyage',
-    description: 'Une platforme de voyage organisés complète avec hotels, paiement et gestion des rôles.',
-    image: '/projects/pts.jpg',
+    title: 'Site web pou un garage mécanicique',
+    description: 'Site web de GMS57 (Group Motors Sports) avec réservation whatsapp, emails et consultation des différentes services.',
+    image: '/projects/gms57.jpg',
     technologies: ['.NET 8', 'Vue Js', 'MySQL', 'Docker'],
-    liveUrl: 'https://ptsvoyages.com/',
+    liveUrl: 'https://www.gms57.fr/',
     githubUrl: '#'
   },
   {
     id: 2,
-    title: 'Site web pour Pâtisseries  ',
-    description: 'Tableau de bord interactif pour visualiser des données analytiques en temps réel.',
-    image: '/projects/Patisserie.jpg',
+    title: 'Site web pour un sérrurier auto  ',
+    description: 'Site web pour réparation  reproduction et dépannage auto , avec réservation.',
+    image: '/projects/clespro.jpg',
     technologies: ['Vue Js', 'TypeScript', 'TailwindCss'],
-    liveUrl: 'https://patisserie-pink.vercel.app/',
+    liveUrl: 'https://clespro.fr',
     githubUrl: '#'
   },
   {
