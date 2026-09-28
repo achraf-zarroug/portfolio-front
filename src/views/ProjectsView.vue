@@ -1,29 +1,33 @@
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
     <AppHeader />
     
-    <main class="py-20">
+    <main class="py-16 lg:py-20 flex-grow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <!-- Hero Section -->
-        <div class="text-center mb-16">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">Portfolio & Realisations</span>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight">
             Mes Projets
           </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez une sélection de mes réalisations et projets personnels
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Découvrez une sélection de mes réalisations web d'entreprise, applications full-stack et projets sur mesure.
           </p>
         </div>
 
         <!-- Filter Section -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <div class="flex flex-wrap justify-center gap-2 mb-12">
           <button
             v-for="category in categories"
             :key="category"
             @click="selectedCategory = category"
-            class="px-6 py-2 rounded-full font-medium transition-colors"
-            :class="selectedCategory === category 
-              ? 'bg-blue-600 text-white' 
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+            class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-200"
+            :class="[
+              selectedCategory === category 
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20' 
+                : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80'
+            ]"
           >
             {{ category }}
           </button>
@@ -39,12 +43,16 @@
         </div>
 
         <!-- Empty State -->
-        <div v-if="filteredProjects.length === 0" class="text-center py-12">
-          <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <div v-if="filteredProjects.length === 0" class="text-center py-16 bg-white rounded-2xl border border-slate-200/80 my-8">
+          <svg class="w-16 h-16 text-slate-300 mx-auto mb-4 stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
           </svg>
-          <p class="text-gray-500 text-lg">Aucun projet trouvé pour cette catégorie</p>
+          <p class="text-slate-600 font-semibold text-lg">Aucun projet trouvé dans cette catégorie</p>
+          <button @click="selectedCategory = 'Tous'" class="mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-700">
+            Réinitialiser les filtres
+          </button>
         </div>
+
       </div>
     </main>
 
@@ -71,92 +79,62 @@ interface Project {
 
 const selectedCategory = ref('Tous')
 
-const categories = ['Tous', 'Web', 'Mobile', 'API', 'Desktop']
+const categories = ['Tous', 'Full-Stack', 'Web Frontend', 'Enterprise & API']
 
 const projects = ref<Project[]>([
   {
     id: 1,
-    title: 'Application E-commerce',
-    description: 'Une application e-commerce complète avec panier, paiement Stripe, gestion des commandes et interface d\'administration.',
-    technologies: ['Vue.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-    category: 'Web',
-    liveUrl: '#',
-    githubUrl: '#'
+    title: 'Site Web GMS57 - Garage Automobile',
+    description: 'Plateforme d\'entreprise complète pour Group Motors Sports (GMS57). Consultation des services mécaniques, devis rapide et réservation par WhatsApp/Email.',
+    image: '/projects/gms57.jpg',
+    technologies: ['.NET 8', 'Vue.js 3', 'MySQL', 'Docker', 'Tailwind CSS'],
+    category: 'Full-Stack',
+    liveUrl: 'https://www.gms57.fr/',
+    githubUrl: 'https://github.com/achraf-zarroug/gms57'
   },
   {
     id: 2,
-    title: 'Dashboard Analytics',
-    description: 'Tableau de bord interactif pour visualiser des données analytiques en temps réel avec graphiques et métriques.',
-    technologies: ['React', 'TypeScript', 'Chart.js', 'Express', 'MongoDB'],
-    category: 'Web',
-    liveUrl: '#',
-    githubUrl: '#'
+    title: 'Plateforme de Recrutement Intelligent (PFE)',
+    description: 'Application de gestion et automatisation des candidatures : extraction IA de compétences depuis CVs PDF, scoring de correspondance et workflow RH.',
+    image: '/projects/pfe.jpg',
+    technologies: ['.NET 8', 'Vue.js 3', 'Python (FastAPI)', 'MsSQL', 'Docker'],
+    category: 'Full-Stack',
+    liveUrl: 'https://recrutement-smart.vercel.app/',
+    githubUrl: 'https://github.com/achraf-zarroug/recrutement-frontend'
   },
   {
     id: 3,
-    title: 'API REST Microservices',
-    description: 'Architecture microservices avec API RESTful, authentification JWT, documentation Swagger et tests automatisés.',
-    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Docker', 'Redis'],
-    category: 'API',
-    githubUrl: '#'
+    title: 'Site Web ClesPro - Serrurier Automobile',
+    description: 'Site vitrine à forte conversion pour service de reproduction de clés et dépannage auto. SEO local poussé et intégration contact direct.',
+    image: '/projects/clespro.jpg',
+    technologies: ['Vue.js 3', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    category: 'Web Frontend',
+    liveUrl: 'https://clespro.fr',
+    githubUrl: 'https://github.com/achraf-zarroug/clespro'
   },
   {
     id: 4,
-    title: 'Application Mobile Todo',
-    description: 'Application mobile de gestion de tâches avec synchronisation cloud et notifications push.',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'AsyncStorage'],
-    category: 'Mobile',
-    liveUrl: '#',
-    githubUrl: '#'
+    title: 'Plateforme Web Cabinet Dentaire',
+    description: 'Site professionnel pour cabinet de soins dentaires avec système de demande de rendez-vous en ligne et gestion des prestations médicales.',
+    image: '/projects/dentiste.jpg',
+    technologies: ['Vue.js 3', 'TypeScript', 'Tailwind CSS', 'EmailJS'],
+    category: 'Web Frontend',
+    liveUrl: 'https://dentiste-frontend.vercel.app/',
+    githubUrl: 'https://github.com/achraf-zarroug/dentiste-frontend'
   },
   {
     id: 5,
-    title: 'Système de Gestion CRM',
-    description: 'Système CRM complet pour la gestion des clients, leads et opportunités commerciales.',
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Bootstrap'],
-    category: 'Web',
-    liveUrl: '#',
-    githubUrl: '#'
-  },
-  {
-    id: 6,
-    title: 'Application Desktop Electron',
-    description: 'Application desktop cross-platform pour la gestion de fichiers et synchronisation cloud.',
-    technologies: ['Electron', 'Vue.js', 'Node.js', 'SQLite'],
-    category: 'Desktop',
-    githubUrl: '#'
-  },
-  {
-    id: 7,
-    title: 'Blog Personnel',
-    description: 'Blog personnel avec système de commentaires, recherche et interface d\'administration.',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    category: 'Web',
-    liveUrl: '#',
-    githubUrl: '#'
-  },
-  {
-    id: 8,
-    title: 'API GraphQL',
-    description: 'API GraphQL avec authentification, autorisation et intégration de bases de données multiples.',
-    technologies: ['Node.js', 'GraphQL', 'Apollo Server', 'MongoDB'],
-    category: 'API',
-    githubUrl: '#'
-  },
-  {
-    id: 9,
-    title: 'App Mobile Fitness',
-    description: 'Application mobile de fitness avec suivi d\'entraînements, statistiques et défis communautaires.',
-    technologies: ['Flutter', 'Dart', 'Firebase', 'SQLite'],
-    category: 'Mobile',
-    githubUrl: '#'
+    title: 'Site Vitrine Pâtisserie Artisanale',
+    description: 'Site web gourmand et attractif pour pâtisserie avec catalogue interactif de créations, réservation de commandes et formulaire de contact.',
+    image: '/projects/Patisserie.jpg',
+    technologies: ['Vue.js 3', 'TypeScript', 'Tailwind CSS', 'Formspree'],
+    category: 'Web Frontend',
+    liveUrl: 'https://patisserie-pink.vercel.app/',
+    githubUrl: 'https://github.com/achraf-zarroug/patisserie-front'
   }
 ])
 
 const filteredProjects = computed(() => {
-  if (selectedCategory.value === 'Tous') {
     return projects.value
-  }
-  return projects.value.filter(project => project.category === selectedCategory.value)
-})
+  })
 </script>

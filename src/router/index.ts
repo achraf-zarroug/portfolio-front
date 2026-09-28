@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import ProjectsView from '../views/ProjectsView.vue'
-import ContactView from '../views/ContactView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,49 +9,41 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Home Page - Achraf zarroug',
-        description: 'Home page for achraf zarroug portfolio'
+        title: 'Achraf Zarroug | Software Engineer & Full-Stack Developer (.NET / Vue.js)',
+        description: 'Portfolio de Achraf Zarroug, Ingénieur en Génie Logiciel & Développeur Full-Stack (.NET 8, Vue.js 3, TypeScript).'
       }
     },
     {
       path: '/about',
-      name: 'about',
-      component: AboutView,
-      meta: {
-        title: 'About me Page - Achraf zarroug',
-        description: 'about me page for achraf zarroug portfolio'
-      }
+      redirect: '/#about'
     },
     {
       path: '/projects',
-      name: 'projects',
-      component: ProjectsView,
-      meta: {
-        title: 'Projects - Achraf zarroug',
-        description: 'Projects list with live url and github code'
-      }
+      redirect: '/#projects'
     },
     {
       path: '/contact',
-      name: 'contact',
-      component: ContactView,
-      meta: {
-        title: 'Contact - Achraf zarroug',
-        description: 'Contact achraf zarroug by whatsapp and email'
-      }
+      redirect: '/#contact'
     }
   ],
-   scrollBehavior() {
-  return { top: 0 }
-}
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+    return { top: 0 }
+  }
 })
-// Mise à jour des meta tags pour chaque route
-router.beforeEach((to, _ , next) => {
-  document.title = to.meta.title as string || 'Votre Site'
+
+router.beforeEach((to, _, next) => {
+  document.title = (to.meta.title as string) || 'Achraf Zarroug | Software Engineer'
   const metaDescription = document.querySelector('meta[name="description"]')
-  if (metaDescription) {
-    metaDescription.setAttribute('content', to.meta.description as string || '')
+  if (metaDescription && to.meta.description) {
+    metaDescription.setAttribute('content', to.meta.description as string)
   }
   next()
 })
-export default router
+
+export default router
