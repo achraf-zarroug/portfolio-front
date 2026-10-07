@@ -1046,6 +1046,16 @@ const projects = ref<Project[]>([
     category: 'Web Frontend',
     liveUrl: 'https://patisserie-pink.vercel.app/',
     githubUrl: 'https://github.com/achraf-zarroug/patisserie-front'
+  },
+    {
+    id: 6,
+    title: 'GeoTrack — Gestion & Recherche Géographique',
+    description: 'Application web personnelle de gestion et de recherche géographique. Visualisation de données cartographiques, recherche de lieux, tracking de positions et gestion d\'entités géolocalisées sur carte interactive.',
+    image: '/projects/geotrack.jpg',
+    technologies: ['React js', 'TypeScript', 'Leaflet.js', 'OpenStreetMap', 'PHP 8 ', 'MySQL'],
+    category: 'Projet Personnel',
+    liveUrl: 'https://geotrack-swart.vercel.app/',
+    githubUrl: 'https://github.com/achraf-zarroug/geotrack'
   }
 ])
 
