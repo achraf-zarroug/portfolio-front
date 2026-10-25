@@ -1,7 +1,7 @@
 <template>
   <footer class="relative z-10 border-t border-white/10 bg-slate-950/90 text-slate-400 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto py-14 px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="hidden">
         
         <!-- Brand & Description -->
         <div class="md:col-span-5 space-y-4">
@@ -109,8 +109,37 @@
 
       </div>
 
+      <div class="portfolio-footer-main">
+        <div class="portfolio-footer-thanks">
+          <h2>Merci d’avoir consulté<br />mon portfolio</h2>
+          <span aria-hidden="true"></span>
+        </div>
+
+        <div class="portfolio-footer-details">
+          <section>
+            <h3>Réseaux</h3>
+            <div class="portfolio-footer-socials">
+              <a v-for="social in socialLinks" :key="social.name" :href="social.href" :aria-label="social.name" :title="social.name" target="_blank" rel="noopener noreferrer">
+                <svg v-if="social.name === 'GitHub'" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.82.58A12 12 0 0 0 12 0Z" /></svg>
+                <svg v-else viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.44c.98 0 1.79-.77 1.79-1.72V1.72C24 .77 23.2 0 22.22 0Z" /></svg>
+              </a>
+              <a href="mailto:achraf.zarroug@hotmail.com" aria-label="E-mail" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+            </div>
+          </section>
+
+          <section>
+            <h3>Me contacter</h3>
+            <ul class="portfolio-footer-contact-list">
+              <li><span class="portfolio-footer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Tunis, Tunisie</span></li>
+              <li><span class="portfolio-footer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .95.68l1.5 4.5a1 1 0 0 1-.5 1.21l-2.26 1.13a11 11 0 0 0 5.52 5.52l1.13-2.26a1 1 0 0 1 1.21-.5l4.5 1.5a1 1 0 0 1 .68.95V19a2 2 0 0 1-2 2h-1C9.72 21 3 14.28 3 6Z"/></svg></span><a href="tel:+21624231240">{{ phone }}</a></li>
+              <li><span class="portfolio-footer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><a :href="'mailto:' + email">{{ email }}</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
       <!-- Bottom Bar -->
-      <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div class="hidden mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
         <p>&copy; {{ currentYear }} {{ name }}. Tous droits réservés.</p>
         
         <div class="flex items-center gap-4">
@@ -132,6 +161,11 @@
           </button>
         </div>
       </div>
+
+      <div class="portfolio-footer-bottom">
+        <p>&copy; {{ currentYear }} {{ name }}. Tous droits réservés.</p>
+        <p>Créé avec <span aria-label="amour">♥</span> en utilisant <strong>Vue.js</strong></p>
+      </div>
     </div>
   </footer>
 </template>
@@ -145,14 +179,18 @@ const phone = '+216 24 231 240'
 
 const navigation = [
   { name: 'Accueil', href: '#home' },
-  { name: 'À propos & Parcours', href: '#about' },
-  { name: 'Réalisations', href: '#projects' },
+  { name: 'À propos', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Compétences', href: '#skills' },
+  { name: 'Expérience', href: '#experience' },
+  { name: 'Formation', href: '#education' },
+  { name: 'Projets', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ]
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/achraf-zarroug/' },
-  { name: 'GitHub', href: 'https://github.com/achraf-zarroug' }
+  { name: 'GitHub', href: 'https://github.com/achraf1934' }
 ]
 
 const currentYear = computed(() => new Date().getFullYear())

@@ -2,6 +2,7 @@
   <div class="min-h-screen flex flex-col bg-slate-950 text-slate-100 relative selection:bg-indigo-500 selection:text-white">
     <!-- Interactive Background (Ambient Orbs, Cyber Grid & Canvas Particles) -->
     <InteractiveBackground />
+    <CursorEffects />
 
     <!-- Top Navigation -->
     <AppHeader />
@@ -12,102 +13,99 @@
       <!-- ================================================================= -->
       <!-- SECTION 1: HERO SECTION (#home)                                  -->
       <!-- ================================================================= -->
-      <section id="home" class="relative pt-32 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <section id="home" class="hero-section relative min-h-screen flex items-center pt-28 pb-24 overflow-hidden">
+        <div class="hero-layout max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16">
+          <div class="hero-copy space-y-7 text-left">
             
             <!-- Left Hero Content -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="space-y-7 text-left">
               
               <!-- Availability Pill -->
-              <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold shadow-lg shadow-emerald-500/10">
+              <div class="hero-availability inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-teal-400/10 border border-teal-300/20 text-teal-200 text-sm font-semibold">
                 <span class="relative flex h-2.5 w-2.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                 </span>
-                <span>Disponible pour opportunités Full-Time & Projets Freelance</span>
+                <span>Disponible pour de nouvelles opportunités</span>
               </div>
 
               <!-- Main Heading -->
               <div class="space-y-2">
-                <p class="text-sm sm:text-base font-mono uppercase tracking-widest text-indigo-400 font-semibold">
-                  Bonjour, je m'appelle
-                </p>
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
-                  Achraf <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">ZARROUG</span>
+                <h1 class="hero-heading">
+                  Bonjour, je suis <span class="hero-name">Achraf Zarroug <span aria-hidden="true">👋</span></span>
                 </h1>
               </div>
 
               <!-- Dynamic Typewriter Subtitle -->
-              <div class="h-10 flex items-center justify-center lg:justify-start">
-                <p class="text-xl sm:text-2xl font-bold font-mono text-slate-200 flex items-center">
-                  <span class="text-indigo-400 mr-2 font-mono">&gt;</span>
+              <div class="hero-role-line h-10 flex items-center justify-start">
+                <p class="text-xl sm:text-2xl font-semibold text-slate-200 flex items-center">
+                  <span class="mr-2">Ingénieur</span>
                   <span>{{ currentTitle }}</span>
-                  <span class="inline-block w-2.5 h-6 bg-cyan-400 ml-1.5 animate-pulse"></span>
+                  <span class="inline-block w-0.5 h-6 bg-fuchsia-400 ml-2 animate-pulse"></span>
                 </p>
               </div>
 
               <!-- Description -->
-              <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                Ingénieur logiciel diplômé de l'<strong class="text-white font-semibold">ESPRIT</strong>, je conçois des applications web d'entreprise performantes, scalables et centrées sur l'utilisateur. Double expertise <strong class="text-indigo-300 font-semibold">.NET 8 (C#)</strong> & frameworks frontend modernes <strong class="text-cyan-300 font-semibold">(Vue.js 3, TypeScript)</strong>.
+              <p class="hero-description text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+                Ingénieur en informatique diplômé de l'<strong class="text-white font-semibold">ESPRIT</strong>, je développe des applications web Full-Stack et des fonctionnalités logicielles. J’allie <strong class="text-fuchsia-200 font-semibold">.NET 8 / C#</strong>, <strong class="text-fuchsia-200 font-semibold">Vue.js</strong> et des pratiques DevOps pour livrer des solutions fiables.
               </p>
 
               <!-- CTA Action Buttons -->
-              <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <a
-                  href="#projects"
-                  class="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all duration-300 active:scale-95 border border-indigo-400/30"
-                >
-                  <span>Explorer mes réalisations</span>
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-
+              <div class="hero-actions pt-4 flex flex-col sm:flex-row gap-4 justify-start items-start sm:items-center">
                 <a
                   href="/cv.pdf"
                   target="_blank"
+                  rel="noopener noreferrer"
                   download="Achraf_Zarroug_CV.pdf"
-                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 shadow-md transition-all duration-200"
+                  class="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-violet-600 via-fuchsia-600 to-purple-500 hover:brightness-110 shadow-xl shadow-fuchsia-900/30 transition-all duration-300 active:scale-95 border border-fuchsia-300/30"
                 >
-                  <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 01-2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <span>Télécharger mon CV</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0116 6.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  <span>Télécharger mon CV (.PDF)</span>
                 </a>
-              </div>
 
-              <!-- Key Metrics / Stats with Animated Flair -->
-              <div class="pt-8 grid grid-cols-3 gap-4 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
-                <div class="space-y-1">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono flex items-center justify-center lg:justify-start">
-                    <span>2+</span>
-                    <span class="text-indigo-400 text-lg">ans</span>
-                  </div>
-                  <div class="text-xs text-slate-400 font-medium">Expérience Pro</div>
-                </div>
-
-                <div class="space-y-1 border-x border-white/10 px-2">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono flex items-center justify-center lg:justify-start">
-                    <span>5+</span>
-                    <span class="text-cyan-400 text-lg">projets</span>
-                  </div>
-                  <div class="text-xs text-slate-400 font-medium">Production & Déployés</div>
-                </div>
-
-                <div class="space-y-1">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono flex items-center justify-center lg:justify-start">
-                    <span>100%</span>
-                  </div>
-                  <div class="text-xs text-slate-400 font-medium">Clean Architecture</div>
-                </div>
+                <a
+                  href="#contact"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm font-semibold text-slate-200 bg-white/[0.035] hover:bg-white/[0.08] border border-violet-300/20 hover:border-violet-300/50 shadow-md transition-all duration-200"
+                >
+                  <svg class="w-4 h-4 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Me contacter</span>
+                </a>
               </div>
 
             </div>
 
-            <!-- Right Hero: Interactive 3D Avatar Card & Code Terminal -->
-            <div class="lg:col-span-5 flex flex-col items-center justify-center space-y-6">
+          </div>
+
+            <div class="hero-art-wrap" aria-label="Illustration d’un poste de travail de développeur">
+              <div class="hero-art-glow"></div>
+              <div class="hero-workstation">
+                <div class="hero-monitor">
+                  <div class="hero-monitor-camera"></div>
+                  <div class="hero-screen">
+                    <div class="hero-screen-top"><span></span><span></span><span></span><b>achraf.dev</b></div>
+                    <div class="hero-screen-content"><span class="hero-screen-kicker">PORTFOLIO · FULL-STACK</span><strong>Des idées<br>en expériences<br><i>numériques.</i></strong><span class="hero-screen-button">Découvrir mes projets ↗</span></div>
+                    <div class="hero-screen-side"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
+                  </div>
+                </div>
+                <div class="hero-monitor-neck"></div><div class="hero-monitor-base"></div><div class="hero-desk"></div><div class="hero-keyboard"></div><div class="hero-mouse"></div>
+                <div class="hero-tower"><span></span><i></i><i></i><i></i></div><div class="hero-plant"><i></i><i></i><i></i><b></b></div>
+              </div>
+              <div class="hero-tech-float hero-tech-dotnet"><span>.NET</span><b>Backend fiable</b></div>
+              <div class="hero-tech-float hero-tech-vue"><span>V</span><b>Vue.js · TypeScript</b></div>
+            </div>
+
+            <aside class="hero-social-rail" aria-label="Réseaux sociaux">
+              <a href="https://github.com/achraf1934" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58A12 12 0 0 0 12 0Z"/></svg></a>
+              <a href="https://www.linkedin.com/in/achraf-zarroug/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.44c.98 0 1.79-.77 1.79-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg></a>
+              <a href="mailto:achraf.zarroug@hotmail.com" aria-label="E-mail" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+            </aside>
+
+            <!-- Legacy code terminal illustration, kept hidden -->
+            <div class="hidden flex-col items-center justify-center space-y-6 absolute right-16 top-1/2 -translate-y-1/2">
               
               <!-- Avatar with Glowing Conic Orbit -->
               <div class="relative group">
@@ -204,212 +202,172 @@
 
             </div>
 
+        </div>
+      </section>
+
+      <!-- Rôles, comme le bandeau de spécialités du site de référence -->
+      <TechMarquee />
+
+      <!-- ================================================================= -->
+      <!-- SECTION 2: ABOUT                                                 -->
+      <!-- ================================================================= -->
+      <section id="about" class="py-24 border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Section Title Header -->
+          <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="badge-brand mb-3">Pour mieux me connaître</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
+              À propos
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Ingénieur logiciel passionné par la création d’applications utiles, performantes et pensées pour leurs utilisateurs.
+            </p>
+          </div>
+
+          <div class="about-bento-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
+            <article class="glass-card about-profile-card md:col-span-2 lg:col-span-8 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+              <div class="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-violet-600/10 blur-3xl pointer-events-none"></div>
+              <div class="about-profile-main relative flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <div class="about-portrait-frame shrink-0">
+                  <img src="/moi2.png" alt="Portrait d’Achraf Zarroug" class="h-full w-full rounded-2xl object-cover" />
+                </div>
+                <div class="min-w-0 text-center sm:text-left">
+                  <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-violet-300">Bonjour, je suis Achraf Zarroug</h3>
+                  <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-400">
+                    Ingénieur en informatique et architecture logicielle diplômé de l'<strong class="text-slate-200">ESPRIT</strong>, je développe des applications web Full-Stack et des fonctionnalités logicielles. Je conçois des solutions fiables, de l’interface au backend.
+                  </p>
+                </div>
+              </div>
+              <div class="about-profile-note relative mt-6 flex items-start gap-3 border-t border-violet-300/10 pt-5">
+                <span class="about-code-icon" aria-hidden="true">&lt;/&gt;</span>
+                <p class="text-sm leading-relaxed text-slate-400">J’aime résoudre des problèmes et créer des produits utiles. Je continue à explorer les nouvelles technologies pour améliorer mes compétences et concevoir de meilleures expériences numériques.</p>
+              </div>
+            </article>
+
+            <article class="glass-card about-flex-card md:col-span-2 lg:col-span-4 rounded-3xl p-6 sm:p-7 flex flex-col items-center justify-center text-center">
+              <div class="wire-globe mb-5" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <h3 class="text-lg font-bold text-white"><span class="mr-2 text-violet-300">☆</span>Mobilité internationale</h3>
+              <p class="mt-2 max-w-sm text-sm leading-relaxed text-slate-400">Basé à Tunis, je suis ouvert au travail à distance et aux opportunités de mobilité.</p>
+            </article>
+
+            <article class="glass-card about-connect-card md:col-span-1 lg:col-span-3 rounded-3xl p-6 sm:p-7 flex flex-col items-center justify-center text-center">
+              <span class="about-mail-icon" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+              </span>
+              <h3 class="mt-4 text-lg font-bold text-white">Restons en contact</h3>
+              <p class="mt-1 text-sm text-slate-400">Prêt à collaborer</p>
+              <button @click="copyEmail" class="about-email-button mt-4" :aria-label="copied ? 'Adresse e-mail copiée' : 'Copier l’adresse e-mail'">
+                <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 8V5a2 2 0 00-2-2H5a2 2 0 00-2 2v9a2 2 0 002 2h3"/></svg>
+                <span>{{ copied ? 'Copié !' : 'achraf.zarroug@hotmail.com' }}</span>
+              </button>
+            </article>
+
+            <article class="glass-card about-languages-card md:col-span-1 lg:col-span-9 rounded-3xl p-6 sm:p-7 flex flex-col justify-center">
+              <p class="mb-5 text-sm leading-relaxed text-slate-400">Français bilingue et anglais avancé : je peux collaborer avec des équipes internationales et multiculturelles.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="language-card"><span>Français</span><strong>Bilingue</strong></div>
+                <div class="language-card"><span>Anglais</span><strong>Avancé</strong></div>
+              </div>
+            </article>
           </div>
 
         </div>
       </section>
 
-      <!-- Infinite Dual Marquee Stack Showcase -->
-      <TechMarquee />
-
-      <!-- ================================================================= -->
-      <!-- SECTION 2: ABOUT & JOURNEY (#about)                              -->
-      <!-- ================================================================= -->
-      <section id="about" class="py-24 border-b border-white/5 relative">
+      <!-- Services offered, based on the work and skills already listed -->
+      <section id="services" class="py-24 border-b border-white/5 relative">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <!-- Section Title Header -->
-          <div class="text-center max-w-3xl mx-auto mb-20">
-            <span class="badge-brand mb-3">Parcours & Compétences</span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
-              À Propos & Écosystème
-            </h2>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-              Une vision orientée ingénierie logicielle : allier robustesse backend, sécurité et finesse ergonomique frontend.
-            </p>
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="badge-brand mb-3">Ce que je peux faire</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">Mes services</h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">De l’idée à la mise en ligne, je crée des expériences web adaptées aux besoins du projet.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <article v-for="service in services" :key="service.title" class="glass-card service-card rounded-2xl p-6">
+              <span class="text-2xl text-fuchsia-300" aria-hidden="true">{{ service.icon }}</span>
+              <h3 class="text-lg font-bold text-white mt-4 mb-2">{{ service.title }}</h3>
+              <p class="text-sm text-slate-400 leading-relaxed">{{ service.description }}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="py-24 border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="badge-brand mb-3">Outils & technologies</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">Compétences</h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Les technologies et méthodes que j’utilise pour concevoir des produits fiables.</p>
+          </div>
+          <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <article v-for="category in skillCategories" :key="category.name" class="skill-category-card rounded-2xl p-5 sm:p-6">
+              <h3 class="mb-6 text-lg sm:text-xl font-extrabold tracking-tight text-slate-100">{{ category.name }}</h3>
+              <div class="flex flex-wrap gap-2">
+                <span v-for="skill in category.items" :key="skill.name" class="skill-chip">
+                  <span class="skill-chip-icon" :style="{ color: skill.color }" aria-hidden="true">{{ skill.icon }}</span>
+                  {{ skill.name }}
+                </span>
+              </div>
+            </article>
           </div>
 
-          <!-- Profile Card -->
-          <div class="glass-card rounded-3xl p-8 sm:p-12 mb-20 relative overflow-hidden">
-            <!-- Background Glow -->
-            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        </div>
+      </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
-              <div class="lg:col-span-4 flex justify-center">
-                <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-tr from-indigo-500 via-purple-600 to-cyan-400 p-1 shadow-2xl">
-                  <img 
-                    src="/moi2.png" 
-                    alt="Achraf Zarroug" 
-                    class="w-full h-full object-cover rounded-[22px] bg-slate-950" 
-                  />
-                </div>
-              </div>
-
-              <div class="lg:col-span-8 space-y-4">
-                <div class="flex flex-wrap items-center gap-3">
-                  <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Achraf Zarroug</h3>
-                  <span class="badge-emerald">Ingénieur Génie Logiciel</span>
-                  <span class="badge-cyber">Full-Stack .NET & Vue</span>
-                </div>
-
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Diplômé en Génie Logiciel de l'<strong class="text-white font-semibold">ESPRIT (Tunis)</strong>, je cumule {{ yearsOfExperience }} ans d'expérience dans la conception et l'implémentation de solutions web modernes.
-                </p>
-
-                <p class="text-slate-400 text-sm leading-relaxed">
-                  Mon approche privilégie la modularité du code (<strong class="text-slate-200">Clean Architecture, DDD, SOLID</strong>), la scalabilité des APIs RESTful et la fluidité des interfaces frontend utilisateur. Toujours en quête d'optimisation des performances et de modernité architecturale.
-                </p>
-
-                <!-- Core Pillars -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
-                  <div class="bg-slate-900/60 p-3 rounded-xl border border-white/5 text-center">
-                    <span class="text-xs font-mono font-bold text-indigo-400 block">Clean Code</span>
-                    <span class="text-[11px] text-slate-500">SOLID & DRY</span>
-                  </div>
-                  <div class="bg-slate-900/60 p-3 rounded-xl border border-white/5 text-center">
-                    <span class="text-xs font-mono font-bold text-cyan-400 block">Scalabilité</span>
-                    <span class="text-[11px] text-slate-500">APIs RESTful</span>
-                  </div>
-                  <div class="bg-slate-900/60 p-3 rounded-xl border border-white/5 text-center">
-                    <span class="text-xs font-mono font-bold text-emerald-400 block">Conteneurs</span>
-                    <span class="text-[11px] text-slate-500">Docker & CI/CD</span>
-                  </div>
-                  <div class="bg-slate-900/60 p-3 rounded-xl border border-white/5 text-center">
-                    <span class="text-xs font-mono font-bold text-purple-400 block">UX Intuitive</span>
-                    <span class="text-[11px] text-slate-500">Vue 3 & Motion</span>
-                  </div>
-                </div>
-
-                <!-- Info Badges -->
-                <div class="pt-3 flex flex-wrap gap-6 text-xs font-mono text-slate-400 border-t border-white/10">
-                  <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>Tunis, Tunisie (Mobile / Remote)</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <a href="mailto:achraf.zarroug@hotmail.com" class="hover:text-indigo-400 transition-colors">achraf.zarroug@hotmail.com</a>
-                  </div>
-                </div>
-
-              </div>
-
+      <!-- Professional Experience -->
+      <section id="experience" class="py-24 border-b border-white/5 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+              <span class="badge-brand mb-3">Mon parcours</span>
+              <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">Expérience professionnelle</h2>
+              <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Quelques expériences et missions qui ont construit mon parcours.</p>
             </div>
-          </div>
-
-          <!-- Technical Skills Matrix -->
-          <div class="mb-24">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-              <div>
-                <h3 class="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-                  <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                  <span>Matrice des Compétences Techniques</span>
-                </h3>
-                <p class="text-xs text-slate-400 mt-1">Technologies manipulées quotidiennement en production</p>
-              </div>
-
-              <!-- Skill Category Tabs -->
-              <div class="flex flex-wrap gap-1.5 bg-slate-900/80 p-1.5 rounded-xl border border-white/10">
-                <button
-                  v-for="cat in skillCategories"
-                  :key="cat.name"
-                  @click="selectedSkillCategory = cat.name"
-                  class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
-                  :class="selectedSkillCategory === cat.name ? 'bg-indigo-600 text-white font-semibold shadow-sm' : 'text-slate-400 hover:text-white'"
-                >
-                  {{ cat.shortName || cat.name }}
-                </button>
-              </div>
-            </div>
-
-            <!-- Skills Display Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              <div
-                v-for="skill in currentCategorySkills"
-                :key="skill.name"
-                class="glass-card p-5 rounded-2xl relative overflow-hidden group hover:border-indigo-500/40 transition-all duration-300"
-              >
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">{{ skill.name }}</span>
-                  <span class="text-[11px] font-mono text-indigo-400 font-semibold">{{ skill.level }}%</span>
-                </div>
-
-                <!-- Animated Progress Bar -->
-                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mb-2.5">
-                  <div
-                    class="h-full bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out"
-                    :style="{ width: `${skill.level}%` }"
-                  ></div>
-                </div>
-
-                <p class="text-[11px] text-slate-400 leading-relaxed">{{ skill.desc }}</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Professional Experience Timeline -->
-          <div class="mb-24">
-            <div class="mb-12">
-              <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2">
-                <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>Expérience Professionnelle</span>
-              </h3>
-              <p class="text-xs text-slate-400 mt-1">Missions freelance, projets d'envergure et stages d'ingénierie</p>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="relative pl-6 sm:pl-8 border-l border-indigo-500/30 space-y-10">
-              <div
-                v-for="job in experience"
-                :key="job.id"
-                class="relative group"
-              >
-                <!-- Glowing Node Point -->
-                <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-indigo-500 group-hover:border-cyan-400 group-hover:scale-125 transition-all duration-300">
-                  <span class="absolute inset-0 rounded-full bg-indigo-400/50 animate-ping"></span>
-                </div>
-
-                <!-- Milestone Card -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl hover:border-indigo-500/40 transition-all duration-300">
-                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                    <div>
-                      <h4 class="text-lg sm:text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
-                        {{ job.title }}
-                      </h4>
-                      <span class="text-sm font-semibold text-indigo-300">{{ job.company }}</span>
+          <div class="experience-timeline">
+            <article v-for="job in experience" :key="job.id" class="experience-item">
+              <span class="experience-node" aria-hidden="true"><i></i></span>
+              <div class="experience-card">
+                <div class="experience-card-heading">
+                  <span class="experience-company-icon" aria-hidden="true">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/></svg>
+                  </span>
+                  <div class="min-w-0 flex-1">
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-100">{{ job.title }}</h3>
+                    <p class="mt-1 text-sm font-medium text-violet-300">{{ job.company }}</p>
+                    <div class="experience-meta mt-2">
+                      <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+                        {{ job.period }}
+                      </span>
+                      <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        {{ job.location }}
+                      </span>
                     </div>
-                    <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-slate-900 text-slate-300 border border-slate-800 w-fit">
-                      {{ job.period }}
-                    </span>
                   </div>
-
-                  <p class="text-slate-300 text-sm leading-relaxed mb-5">{{ job.description }}</p>
-
-                  <div class="flex flex-wrap gap-1.5">
-                    <span
-                      v-for="tech in job.technologies"
-                      :key="tech"
-                      class="tech-pill"
-                    >
-                      {{ tech }}
-                    </span>
-                  </div>
+                  <button class="experience-toggle" type="button" @click="toggleExperience(job.id)" :aria-expanded="expandedExperienceIds.includes(job.id)" :aria-label="expandedExperienceIds.includes(job.id) ? 'Réduire la description' : 'Afficher la description'">
+                    <svg :class="{ 'is-collapsed': !expandedExperienceIds.includes(job.id) }" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="m6 9 6 6 6-6"/></svg>
+                  </button>
                 </div>
+                <transition name="experience-details">
+                  <p v-if="expandedExperienceIds.includes(job.id)" class="experience-description">{{ job.description }}</p>
+                </transition>
               </div>
-            </div>
+            </article>
           </div>
 
-          <!-- Education Section -->
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="py-24 border-b border-white/5 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+              <span class="badge-brand mb-3">Formation</span>
+              <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">Formation académique</h2>
+              <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Mon parcours en ingénierie et en sciences.</p>
+            </div>
           <div>
             <div class="mb-10">
               <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2">
@@ -417,27 +375,34 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                 </svg>
-                <span>Formation & Diplômes d'Ingénieur</span>
+                <span>Diplômes</span>
               </h3>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div
+            <div class="education-timeline">
+              <article
                 v-for="edu in education"
                 :key="edu.id"
-                class="glass-card p-6 rounded-2xl flex flex-col justify-between hover:border-indigo-500/30 transition-all duration-300"
+                class="education-item"
+                :class="edu.id % 2 === 1 ? 'education-item-left' : 'education-item-right'"
               >
-                <div>
-                  <div class="flex items-center justify-between gap-2 mb-3">
-                    <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                      {{ edu.year }}
-                    </span>
-                  </div>
-                  <h4 class="text-base font-bold text-white mb-1.5">{{ edu.degree }}</h4>
-                  <p class="text-xs font-semibold text-indigo-400 mb-3">{{ edu.school }}</p>
-                  <p class="text-xs text-slate-400 leading-relaxed">{{ edu.description }}</p>
+                <span class="education-node" aria-hidden="true"></span>
+                <div class="education-card">
+                  <h3 class="text-lg sm:text-xl font-bold text-violet-300">{{ edu.degree }}</h3>
+                  <p class="education-detail">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12 7 21l5-3 5 3-1.5-9"/></svg>
+                    <strong>{{ edu.school }}</strong>
+                  </p>
+                  <p class="education-detail">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    {{ edu.location }}
+                  </p>
+                  <p class="education-detail">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+                    {{ edu.year }}
+                  </p>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
 
@@ -445,18 +410,18 @@
       </section>
 
       <!-- ================================================================= -->
-      <!-- SECTION 3: PROJECTS SHOWCASE (#projects)                         -->
+      <!-- SECTION 7: PROJECTS SHOWCASE (#projects)                         -->
       <!-- ================================================================= -->
       <section id="projects" class="py-24 border-b border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="badge-brand mb-3">Portfolio & Code</span>
+            <span class="badge-brand mb-3">Quelques projets</span>
             <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
-              Mes Réalisations Majeures
+              Projets
             </h2>
             <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-              Applications web complètes, plateformes d'entreprise avec backend .NET et architectures frontend réactives.
+              Une sélection d’applications web, de plateformes métier et de sites réalisés pour des besoins concrets.
             </p>
           </div>
 
@@ -495,197 +460,103 @@
       <!-- ================================================================= -->
       <section id="contact" class="py-24 relative">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="badge-brand mb-3">Opportunités & Freelance</span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
-              Démarrons un Projet Ensemble
-            </h2>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-              Une opportunité en CDI, un besoin de développement sur mesure ou une question technique ? Je réponds sous 24h.
-            </p>
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="badge-brand mb-3">Parlons de votre projet</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2">Contact</h2>
           </div>
+          <p class="contact-intro">
+            Que vous souhaitiez créer un produit, améliorer un site ou explorer une nouvelle opportunité, je suis toujours ouvert aux collaborations. Transformons votre vision en réalité.
+          </p>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
-            <!-- Left: Contact Details Cards -->
-            <div class="lg:col-span-5 space-y-6">
-              
-              <!-- Direct WhatsApp Quick Chat Card -->
-              <div class="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group">
-                <div class="flex items-center gap-4 mb-4">
-                  <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30 shrink-0">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 16 16">
-                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="text-base font-bold text-white">Discussion Rapide WhatsApp</h4>
-                    <p class="text-xs text-slate-400">Réponse immédiate pour urgences & devis</p>
-                  </div>
-                </div>
-
-                <a
-                  href="https://wa.me/21624231240?text=Bonjour%20Achraf%2C%20je%20souhaite%20discuter%20d'une%20opportunit%C3%A9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-shimmer w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg shadow-emerald-600/25 transition-all text-xs"
-                >
-                  <span>Ouvrir la conversation WhatsApp</span>
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+          <div class="contact-layout">
+            <div class="contact-sidebar">
+              <p class="contact-social-caption">Retrouvez-moi aussi ici — et découvrez mes projets ✨</p>
+              <div class="contact-socials">
+                <a v-for="social in socialLinks" :key="social.name" :href="social.href" :aria-label="social.name" :title="social.name" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+                  <svg v-if="social.name === 'GitHub'" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58A12 12 0 0 0 12 0Z"/></svg>
+                  <svg v-else viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.44c.98 0 1.79-.77 1.79-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
                 </a>
               </div>
 
-              <!-- Quick Info Card with Copy Email -->
-              <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-5">
-                <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold pb-3 border-b border-white/10">
-                  Coordonnées Directes
-                </h4>
-
-                <!-- Email Row with Copy Button -->
-                <div class="flex items-center justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shrink-0">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span class="text-[11px] font-mono text-slate-400 block">Email</span>
-                      <a href="mailto:achraf.zarroug@hotmail.com" class="text-xs sm:text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
-                        achraf.zarroug@hotmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <button
-                    @click="copyEmail"
-                    class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800 hover:bg-indigo-600 text-slate-300 hover:text-white transition-colors border border-slate-700"
-                    :title="copied ? 'Email copié !' : 'Copier l\'adresse email'"
-                  >
-                    {{ copied ? 'Copié !' : 'Copier' }}
-                  </button>
+              <h3 class="contact-info-title">Mes coordonnées</h3>
+              <div class="contact-info-list">
+                <div class="contact-info-row">
+                  <span class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                  <div><span>Localisation</span><strong>Tunis, Tunisie</strong></div>
                 </div>
-
-                <!-- Phone Row -->
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shrink-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-[11px] font-mono text-slate-400 block">Téléphone</span>
-                    <p class="text-xs sm:text-sm font-semibold text-white">(+216) 24 231 240</p>
-                  </div>
+                <a class="contact-info-row" href="tel:+21624231240">
+                  <span class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .95.68l1.5 4.5a1 1 0 0 1-.5 1.21l-2.26 1.13a11 11 0 0 0 5.52 5.52l1.13-2.26a1 1 0 0 1 1.21-.5l4.5 1.5a1 1 0 0 1 .68.95V19a2 2 0 0 1-2 2h-1C9.72 21 3 14.28 3 6Z"/></svg></span>
+                  <div><span>Téléphone</span><strong>+216 24 231 240</strong></div>
+                </a>
+                <div class="contact-info-row">
+                  <span class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                  <div><span>Email</span><a href="mailto:achraf.zarroug@hotmail.com"><strong>achraf.zarroug@hotmail.com</strong></a></div>
+                  <button type="button" class="contact-copy" @click.prevent="copyEmail">{{ copied ? 'Copié !' : 'Copier' }}</button>
                 </div>
-
-                <!-- Location Row -->
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shrink-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-[11px] font-mono text-slate-400 block">Localisation</span>
-                    <p class="text-xs sm:text-sm font-semibold text-white">Tunis, Tunisie (Disponible Remote / Mobilité)</p>
-                  </div>
-                </div>
-
-                <!-- Socials -->
-                <div class="pt-4 border-t border-white/10 flex gap-3">
-                  <a
-                    v-for="social in socialLinks"
-                    :key="social.name"
-                    :href="social.href"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex-1 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-800 flex items-center justify-center gap-2"
-                  >
-                    <span>{{ social.name }}</span>
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
-
               </div>
-
+              <p class="contact-signoff">Avant de partir… n’hésitez pas à me dire bonjour ! 👋</p>
             </div>
 
             <!-- Right: Interactive Contact Form -->
-            <div class="lg:col-span-7">
-              <div class="glass-card p-8 sm:p-10 rounded-3xl relative overflow-hidden">
-                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Envoyez-moi un message direct</h3>
-                <p class="text-xs sm:text-sm text-slate-400 mb-8">Remplissez le formulaire ci-dessous pour démarrer l'échange.</p>
+            <div class="contact-form-card">
+                <h3 class="contact-form-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Entrons en contact</h3>
+                <p class="contact-form-subtitle">Envoyez-moi un message, je vous répondrai dès que possible.</p>
                 
-                <form @submit.prevent="submitForm" class="space-y-5">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <form @submit.prevent="submitForm" class="contact-form-fields">
+                  <div>
                     <div>
-                      <label for="name" class="block text-xs font-mono font-medium text-slate-300 uppercase tracking-wider mb-2">
-                        Nom complet *
-                      </label>
+                      <label for="name" class="contact-label">Nom</label>
                       <input
                         id="name"
                         v-model="form.name"
                         type="text"
                         required
-                        class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
-                        placeholder="Ex: Alexandre Dubois"
+                        class="contact-input"
+                        placeholder="Votre nom"
                       />
                     </div>
 
                     <div>
-                      <label for="email" class="block text-xs font-mono font-medium text-slate-300 uppercase tracking-wider mb-2">
-                        Votre adresse Email *
-                      </label>
+                      <label for="email" class="contact-label">Email</label>
                       <input
                         id="email"
                         v-model="form.email"
                         type="email"
                         required
-                        class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
-                        placeholder="nom@entreprise.com"
+                        class="contact-input"
+                        placeholder="nom@exemple.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label for="subject" class="block text-xs font-mono font-medium text-slate-300 uppercase tracking-wider mb-2">
-                      Sujet de votre message *
-                    </label>
+                    <label for="subject" class="contact-label">Sujet</label>
                     <input
                       id="subject"
                       v-model="form.subject"
                       type="text"
                       required
-                      class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
-                      placeholder="Ex: Opportunité Ingénieur Full-Stack (.NET 8 & Vue.js)"
+                      class="contact-input"
+                      placeholder="Votre projet"
                     />
                   </div>
 
                   <div>
-                    <label for="message" class="block text-xs font-mono font-medium text-slate-300 uppercase tracking-wider mb-2">
-                      Message détaillé *
-                    </label>
+                    <label for="message" class="contact-label">Message</label>
                     <textarea
                       id="message"
                       v-model="form.message"
-                      rows="5"
+                      rows="4"
                       required
-                      class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
-                      placeholder="Décrivez votre projet, vos technologies ou vos attentes..."
+                      class="contact-input contact-textarea"
+                      placeholder="Parlez-moi de votre projet..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     :disabled="isSubmitting"
-                    class="btn-shimmer w-full bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-indigo-600/30 transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed border border-indigo-400/30 text-sm"
+                    class="contact-submit"
                   >
                     <template v-if="isSubmitting">
                       <span class="flex items-center justify-center gap-2">
@@ -693,15 +564,13 @@
                           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
                           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
                         </svg>
-                        Transmission sécurisée en cours...
+                        Envoi en cours…
                       </span>
                     </template>
                     <template v-else>
                       <span class="flex items-center justify-center gap-2">
-                        <span>Transmettre mon message</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        <span>Envoyer le message</span>
                       </span>
                     </template>
                   </button>
@@ -732,7 +601,6 @@
                   </div>
                 </transition>
 
-              </div>
             </div>
 
           </div>
@@ -773,6 +641,7 @@ import ProjectCard from '../components/ProjectCard.vue'
 import ProjectModal from '../components/ProjectModal.vue'
 import TechMarquee from '../components/TechMarquee.vue'
 import InteractiveBackground from '../components/InteractiveBackground.vue'
+import CursorEffects from '../components/CursorEffects.vue'
 
 // --- Interfaces ---
 interface Project {
@@ -790,6 +659,7 @@ interface Experience {
   id: number
   title: string
   company: string
+  location: string
   period: string
   description: string
   technologies: string[]
@@ -799,19 +669,18 @@ interface Education {
   id: number
   degree: string
   school: string
+  location: string
   year: string
-  description: string
 }
 
 interface SkillItem {
   name: string
-  level: number
-  desc: string
+  icon: string
+  color: string
 }
 
 interface SkillCategory {
   name: string
-  shortName?: string
   items: SkillItem[]
 }
 
@@ -831,7 +700,7 @@ interface SocialLink {
 const titles = [
   'Ingénieur en Génie Logiciel',
   'Développeur Full-Stack .NET 8 & Vue.js 3',
-  'Architecte Clean Architecture & APIs REST',
+  'Ingénieur logiciel & architecture',
   'Spécialiste Frontend Moderne & TypeScript'
 ]
 
@@ -869,131 +738,171 @@ const typeWriter = () => {
 const activeCodeTab = ref<'csharp' | 'vue'>('csharp')
 
 // --- About Data ---
-const yearsOfExperience = computed(() => {
-  const startYear = 2023
-  const currentYear = new Date().getFullYear()
-  return currentYear - startYear
-})
+const services = [
+  {
+    icon: '✦',
+    title: 'Développement web',
+    description: 'Des applications web responsive et complètes, du frontend jusqu’au backend.'
+  },
+  {
+    icon: '⌘',
+    title: 'Applications métier',
+    description: 'Des outils adaptés aux besoins réels : gestion, réservation, recrutement et suivi.'
+  },
+  {
+    icon: '⌁',
+    title: 'API & architecture',
+    description: 'Des APIs REST structurées et des bases solides avec .NET, C# et Clean Architecture.'
+  },
+  {
+    icon: '◈',
+    title: 'Sites web & UX',
+    description: 'Des sites modernes, accessibles et rapides, conçus pour une navigation claire.'
+  }
+]
 
 const experience = ref<Experience[]>([
   {
     id: 1,
-    title: 'Développeur Full-Stack .NET & Vue.js',
-    company: 'Freelance – Agence de voyage',
-    period: '2024',
-    description: `Conception et déploiement d’un système complet pour agence de voyage : gestion des réservations, module d'authentification sécurisé JWT, back-office d'administration, et catalogue interactif. Clean Architecture .NET 8 couplée à une interface Vue 3 ultra réactive.`,
-    technologies: ['.NET 8', 'Vue.js 3', 'TypeScript', 'Tailwind CSS', 'SQL Server', 'Axios']
+    title: 'Développeur Full-Stack',
+    company: 'UltimateIT Solutions',
+    location: 'Zarzis, Tunisie',
+    period: 'Mars 2025 – Juillet 2026',
+    description: `Développement de fonctionnalités frontend avec Vue.js et backend avec .NET 8 / C#, de la conception à l’intégration. Conception d’API REST et gestion de bases de données SQLite ; correction et maintenance des applications, tests, packaging et déploiement sous Windows avec Electron.`,
+    technologies: ['Vue.js', '.NET 8', 'C#', 'API REST', 'SQLite', 'Electron', 'Windows']
   },
   {
     id: 2,
-    title: 'Développeur Frontend – Plateforme Médicale & Prise de RDV',
-    company: 'Freelance – Cabinet dentaire',
-    period: '2024',
-    description: `Développement d’une interface de prise de rendez-vous intuitive avec validation en temps réel, intégration EmailJS pour notifications instantanées et optimisation SEO locale atteignant les meilleurs scores Lighthouse.`,
-    technologies: ['Vue.js 3', 'Tailwind CSS', 'TypeScript', 'EmailJS', 'SEO Optimization']
+    title: 'Stage de fin d’études · Ingénieur génie logiciel',
+    company: 'Neoledge',
+    location: 'Zarzis, Tunisie',
+    period: 'Février – Novembre 2024',
+    description: `Conception et développement d’une solution web de gestion des candidatures en .NET et React.js. Développement d’une analyse de CV en Python pour comparer les profils aux offres, génération automatique de CV et automatisation des déploiements par pipelines CI/CD.`,
+    technologies: ['.NET', 'React.js', 'Python', 'CI/CD', 'DevOps']
   },
   {
     id: 3,
-    title: 'Développeur Frontend – Catalogue & Réservation Artisanale',
-    company: 'Freelance – Maison de Pâtisserie',
-    period: '2024',
-    description: `Création d’un site vitrine haut de gamme avec galerie de créations filtrable, gestion des commandes spéciales et formulaires dynamiques responsive pour une expérience client fluide sur mobile et desktop.`,
-    technologies: ['Vue.js 3', 'Tailwind CSS', 'TypeScript', 'Formspree']
-  },
-  {
-    id: 4,
-    title: 'Stage PFE – Ingénieur Full-Stack & Extraction IA',
-    company: 'NeoLedge',
-    period: '2023',
-    description: `Conception d’un système de parsing et extraction de compétences depuis des CVs candidats, algorithme de scoring de correspondance par similarité sémantique, et génération automatique de fiches de synthèse RH.`,
-    technologies: ['.NET Core', 'Vue.js', 'Python (FastAPI)', 'Entity Framework', 'Docker', 'REST API']
+    title: 'Stage d’ingénieur · Développement web',
+    company: 'Smart UP / 3s Group',
+    location: 'Tunis, Tunisie',
+    period: 'Juin – Août 2023',
+    description: `Développement d’une application web de gestion de quiz et d’examens en ligne avec React.js : gestion des questions, correction automatique, calcul des scores, utilisateurs et sessions de test.`,
+    technologies: ['React.js', 'JavaScript', 'Gestion des examens', 'Scoring']
   }
 ])
+
+const expandedExperienceIds = ref(experience.value.map(job => job.id))
+
+const toggleExperience = (id: number) => {
+  expandedExperienceIds.value = expandedExperienceIds.value.includes(id)
+    ? expandedExperienceIds.value.filter(expandedId => expandedId !== id)
+    : [...expandedExperienceIds.value, id]
+}
 
 const education = ref<Education[]>([
   {
     id: 1,
-    degree: 'Diplôme d’Ingénieur en Génie Logiciel',
+    degree: 'Diplôme d’ingénieur en génie logiciel',
     school: 'ESPRIT - École Supérieure Privée d’Ingénierie et de Technologie',
+    location: 'Tunis, Tunisie',
     year: '2018 - 2024',
-    description: `Cycle complet d'ingénierie logicielle : Architecture distribuée, bases de données relationnelles et NoSQL, cybersécurité, méthodologies Agile Scrum et conduite de projets innovants.`
   },
   {
     id: 2,
-    degree: 'Cycle Préparatoire Mathématiques - Physique',
-    school: 'IPEIT - Institut Préparatoire aux Études d’Ingénieurs de Tunis',
-    year: '2016 - 2017',
-    description: `Formation scientifique d'excellence : Algorithmique avancée, analyse mathématique, algèbre linéaire et physique quantique/ondulatoire.`
-  },
-  {
-    id: 3,
     degree: 'Baccalauréat – Sciences Expérimentales',
     school: 'Lycée Technique de Zarzis',
-    year: '2015',
-    description: `Formation secondaire scientifique générale.`
+    location: 'Zarzis, Tunisie',
+    year: '2015'
   }
 ])
 
 // --- Skills Matrix Data ---
-const selectedSkillCategory = ref('Backend & Architecture')
-
 const skillCategories = ref<SkillCategory[]>([
   {
-    name: 'Backend & Architecture',
-    shortName: 'Backend',
+    name: 'Langages de programmation',
     items: [
-      { name: '.NET 8 / C#', level: 95, desc: 'Web APIs RESTful, Minimal APIs, LINQ, Async/Await' },
-      { name: 'ASP.NET Core', level: 92, desc: 'Middlewares, Filters, Dependency Injection' },
-      { name: 'Entity Framework Core', level: 90, desc: 'Migrations, Code-First, DbContext optimization' },
-      { name: 'Clean Architecture', level: 92, desc: 'DDD, Repository & Unit of Work, SOLID' },
-      { name: 'Python & FastAPI', level: 80, desc: 'Microservices légers, parsing de données' },
-      { name: 'Sécurité & JWT', level: 88, desc: 'Auth, Claims, CORS, chiffrement' }
+      { name: 'C#', icon: 'C#', color: '#a78bfa' },
+      { name: 'Java', icon: '☕', color: '#f59e0b' },
+      { name: 'PHP', icon: 'php', color: '#a5b4fc' },
+      { name: 'Python', icon: 'Py', color: '#facc15' },
+      { name: 'JavaScript', icon: 'JS', color: '#facc15' },
+      { name: 'TypeScript', icon: 'TS', color: '#38bdf8' },
+      { name: 'SQL', icon: '▤', color: '#60a5fa' }
     ]
   },
   {
-    name: 'Frontend & UI',
-    shortName: 'Frontend',
+    name: 'Développement Frontend',
     items: [
-      { name: 'Vue.js 3', level: 94, desc: 'Composition API, Script Setup, Reactivity Core' },
-      { name: 'TypeScript', level: 90, desc: 'Typage strict, interfaces génériques' },
-      { name: 'Tailwind CSS', level: 95, desc: 'Design systems modernes, responsive, animations' },
-      { name: 'Pinia & Vuex', level: 88, desc: 'Gestion d\'état centralisée scalable' },
-      { name: 'Vite & Tooling', level: 90, desc: 'Bundling rapide, plugins, tree-shaking' },
-      { name: 'Animations CSS / GSAP', level: 86, desc: 'Transitions fluides, scroll triggers' }
+      { name: 'Vue.js', icon: 'V', color: '#4ade80' },
+      { name: 'React.js', icon: '⚛', color: '#67e8f9' },
+      { name: 'JavaScript', icon: 'JS', color: '#facc15' },
+      { name: 'TypeScript', icon: 'TS', color: '#38bdf8' },
+      { name: 'Interfaces responsive', icon: 'UI', color: '#d8b4fe' }
     ]
   },
   {
-    name: 'Données & Cloud / DevOps',
-    shortName: 'DevOps & Data',
+    name: 'Développement Backend',
     items: [
-      { name: 'SQL Server (T-SQL)', level: 88, desc: 'Procédures stockées, indexation, jointures' },
-      { name: 'MySQL & PostgreSQL', level: 85, desc: 'Bases relationnelles, modélisation relationnelle' },
-      { name: 'Docker & Compose', level: 85, desc: 'Conteneurisation d\'APIs et frontend' },
-      { name: 'Git & GitHub Workflows', level: 92, desc: 'Branching, PRs, CI/CD actions' },
-      { name: 'Postman', level: 92, desc: 'Tests de charge d\'APIs et documentation' },
-      { name: 'Vercel & Déploiement', level: 90, desc: 'Hébergement haute disponibilité' }
+      { name: '.NET 8', icon: '.N', color: '#c084fc' },
+      { name: 'Spring Boot', icon: 'S', color: '#4ade80' },
+      { name: 'Symfony', icon: 'sf', color: '#e2e8f0' },
+      { name: 'API REST', icon: 'API', color: '#38bdf8' },
+      { name: 'Architecture logicielle', icon: '⌘', color: '#d8b4fe' }
     ]
   },
   {
-    name: 'Méthodologie & Soft Skills',
-    shortName: 'Méthodes',
+    name: 'Applications & systèmes',
     items: [
-      { name: 'Agile & Scrum', level: 92, desc: 'Sprints, daily meetings, backlog refinement' },
-      { name: 'Résolution de problèmes', level: 95, desc: 'Débogage méthodique et optimisation' },
-      { name: 'Sensibilité UX/UI', level: 90, desc: 'Ergonomie, accessibilité et design moderne' },
-      { name: 'Communication & Autonomie', level: 92, desc: 'Collaboration fluide, respect des délais' }
+      { name: 'Electron', icon: 'E', color: '#7dd3fc' },
+      { name: 'Windows', icon: '⊞', color: '#38bdf8' },
+      { name: 'Linux', icon: '🐧', color: '#facc15' },
+      { name: 'Déploiement desktop', icon: '↥', color: '#c4b5fd' }
+    ]
+  },
+  {
+    name: 'Bases de données',
+    items: [
+      { name: 'MySQL', icon: '≋', color: '#38bdf8' },
+      { name: 'SQLite', icon: '◉', color: '#60a5fa' },
+      { name: 'MongoDB', icon: '◆', color: '#4ade80' },
+      { name: 'PostgreSQL', icon: 'P', color: '#93c5fd' }
+    ]
+  },
+  {
+    name: 'IA & traitement de données',
+    items: [
+      { name: 'Python', icon: 'Py', color: '#facc15' },
+      { name: 'Analyse de CV', icon: 'CV', color: '#c4b5fd' },
+      { name: 'Correspondance profils/offres', icon: '↔', color: '#67e8f9' },
+      { name: 'Automatisation', icon: '✧', color: '#d8b4fe' }
+    ]
+  },
+  {
+    name: 'Cloud, DevOps & automatisation',
+    items: [
+      { name: 'Docker', icon: '◈', color: '#38bdf8' },
+      { name: 'GitHub Actions', icon: '⌘', color: '#e2e8f0' },
+      { name: 'CI/CD', icon: '↻', color: '#c4b5fd' },
+      { name: 'Jenkins', icon: 'J', color: '#f87171' },
+      { name: 'Ansible', icon: 'A', color: '#fb7185' },
+      { name: 'Prometheus', icon: 'P', color: '#fb923c' },
+      { name: 'Grafana', icon: 'G', color: '#fbbf24' }
+    ]
+  },
+  {
+    name: 'Outils & méthodes',
+    items: [
+      { name: 'Git', icon: '◆', color: '#fb7185' },
+      { name: 'Agile Scrum', icon: '↻', color: '#c084fc' },
+      { name: 'Tests logiciels', icon: '✓', color: '#4ade80' },
+      { name: 'Debugging', icon: '⌕', color: '#67e8f9' }
     ]
   }
 ])
 
-const currentCategorySkills = computed(() => {
-  const cat = skillCategories.value.find(c => c.name === selectedSkillCategory.value)
-  return cat ? cat.items : skillCategories.value[0].items
-})
-
 // --- Projects Data ---
 const selectedCategory = ref('Tous')
-const categories = ['Tous', 'Full-Stack', 'Web Frontend', 'Enterprise & API']
+const categories = ['Tous', 'Web', 'Mobile', 'IA', 'Autres']
 const activeModalProject = ref<Project | null>(null)
 
 const projects = ref<Project[]>([
@@ -1003,7 +912,7 @@ const projects = ref<Project[]>([
     description: 'Plateforme d\'entreprise complète pour Group Motors Sports (GMS57). Consultation des prestations mécaniques, devis instantané et module de réservation directe par WhatsApp et email.',
     image: '/projects/gms57.jpg',
     technologies: ['.NET 8', 'Vue.js 3', 'MySQL', 'Docker', 'Tailwind CSS'],
-    category: 'Full-Stack',
+    category: 'Web',
     liveUrl: 'https://www.gms57.fr/',
     githubUrl: 'https://github.com/achraf-zarroug/gms57'
   },
@@ -1013,7 +922,7 @@ const projects = ref<Project[]>([
     description: 'Application de gestion et automatisation des candidatures : extraction IA de compétences depuis des CVs PDF, calcul de similarité sémantique et génération de rapports RH.',
     image: '/projects/pfe.jpg',
     technologies: ['.NET 8', 'Vue.js 3', 'Python (FastAPI)', 'SQL Server', 'Docker'],
-    category: 'Full-Stack',
+    category: 'IA',
     liveUrl: 'https://recrutement-smart.vercel.app/',
     githubUrl: 'https://github.com/achraf-zarroug/recrutement-frontend'
   },
@@ -1023,7 +932,7 @@ const projects = ref<Project[]>([
     description: 'Site vitrine moderne à fort taux de conversion pour services de reproduction et programmation de clés auto. SEO local poussé et intégration contact immédiat.',
     image: '/projects/clespro.jpg',
     technologies: ['Vue.js 3', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    category: 'Web Frontend',
+    category: 'Web',
     liveUrl: 'https://clespro.fr',
     githubUrl: 'https://github.com/achraf-zarroug/clespro'
   },
@@ -1033,7 +942,7 @@ const projects = ref<Project[]>([
     description: 'Site professionnel pour cabinet dentaire avec formulaire dynamique de prise de rendez-vous en ligne, présentation des soins et notifications par email.',
     image: '/projects/dentiste.jpg',
     technologies: ['Vue.js 3', 'TypeScript', 'Tailwind CSS', 'EmailJS'],
-    category: 'Web Frontend',
+    category: 'Web',
     liveUrl: 'https://dentiste-frontend.vercel.app/',
     githubUrl: 'https://github.com/achraf-zarroug/dentiste-frontend'
   },
@@ -1043,17 +952,17 @@ const projects = ref<Project[]>([
     description: 'Site web gourmand avec catalogue interactif de créations pâtissières, module de réservation de gâteaux personnalisés et formulaire de contact.',
     image: '/projects/Patisserie.jpg',
     technologies: ['Vue.js 3', 'TypeScript', 'Tailwind CSS', 'Formspree'],
-    category: 'Web Frontend',
+    category: 'Web',
     liveUrl: 'https://patisserie-pink.vercel.app/',
     githubUrl: 'https://github.com/achraf-zarroug/patisserie-front'
   },
     {
     id: 6,
     title: 'GeoTrack — Gestion & Recherche Géographique',
-    description: 'Application web personnelle de gestion et de recherche géographique. Visualisation de données cartographiques, recherche de lieux, tracking de positions et gestion d\'entités géolocalisées sur carte interactive.',
+    description: 'Application web full-stack de gestion et de recherche géographique, avec API REST, architecture MVC, interface React.js, backend PHP 8.3 et recherche optimisée avec Elasticsearch.',
     image: '/projects/geotrack.jpg',
-    technologies: ['React js', 'TypeScript', 'Leaflet.js', 'OpenStreetMap', 'PHP 8 ', 'MySQL'],
-    category: 'Projet Personnel',
+    technologies: ['React.js', 'PHP 8.3', 'MySQL', 'Elasticsearch', 'API REST'],
+    category: 'Autres',
     liveUrl: 'https://geotrack-swart.vercel.app/',
     githubUrl: 'https://github.com/achraf-zarroug/geotrack'
   }
@@ -1088,7 +997,7 @@ const form = reactive<ContactForm>({
 
 const socialLinks: SocialLink[] = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/achraf-zarroug/' },
-  { name: 'GitHub', href: 'https://github.com/achraf-zarroug' }
+  { name: 'GitHub', href: 'https://github.com/achraf1934' }
 ]
 
 const copyEmail = async () => {

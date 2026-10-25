@@ -1,61 +1,41 @@
 <template>
-  <header class="fixed top-0 inset-x-0 z-50 pointer-events-none pt-3 sm:pt-4 px-3 sm:px-6">
+  <header class="reference-header fixed top-0 inset-x-0 z-50 pointer-events-none px-5 sm:px-8">
     <!-- Top Scroll Progress Bar -->
-    <div class="fixed top-0 left-0 right-0 h-[2px] bg-slate-800 z-50 pointer-events-none">
+    <div class="fixed right-0 top-1/2 -translate-y-1/2 w-1 h-24 bg-slate-900 z-50 pointer-events-none rounded-full overflow-hidden">
       <div
-        class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 transition-all duration-150 ease-out"
-        :style="{ width: `${scrollProgress}%` }"
+        class="w-full bg-gradient-to-b from-violet-400 via-fuchsia-500 to-violet-400 transition-all duration-150 ease-out rounded-full"
+        :style="{ height: `${scrollProgress}%` }"
       ></div>
     </div>
 
     <!-- Floating Island Navbar -->
-    <nav class="max-w-6xl mx-auto pointer-events-auto">
+    <nav class="max-w-7xl mx-auto pointer-events-auto">
       <div
-        class="glass-panel rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3 shadow-2xl shadow-black/40 border border-white/10 flex items-center justify-between transition-all duration-300"
-        :class="{ 'py-2 border-indigo-500/20 shadow-indigo-500/10': isScrolled }"
+        class="reference-header-inner flex items-center justify-between py-3 sm:py-4 transition-all duration-300"
       >
         <!-- Logo & Identity -->
         <a href="#home" class="flex items-center gap-3 group">
-          <div class="relative">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-300">
-              <div class="w-full h-full rounded-[10px] overflow-hidden bg-slate-900 flex items-center justify-center">
-                <img 
-                  src="/moi2.png" 
-                  alt="Achraf Zarroug"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-            </div>
-            <span class="absolute -bottom-0.5 -right-0.5 flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-slate-950"></span>
-            </span>
+          <div class="brand-mark w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-black tracking-tight group-hover:scale-105 transition-transform duration-300">
+            AZ
           </div>
 
           <div class="flex flex-col">
             <div class="flex items-center gap-2">
-              <span class="text-sm sm:text-base font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
+              <span class="text-sm sm:text-base font-extrabold text-white group-hover:text-violet-300 transition-colors tracking-tight uppercase">
                 {{ name }}
               </span>
-              <span class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Dispo
-              </span>
             </div>
-            <span class="text-[11px] text-slate-400 font-mono tracking-tight hidden sm:inline-block">
-              Software Engineer • .NET & Vue
-            </span>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <div class="hidden md:flex items-center bg-slate-900/60 p-1 rounded-xl border border-white/5 space-x-1">
+        <div class="header-links hidden lg:flex items-center gap-0.5 xl:gap-1">
           <a
             v-for="item in navigation"
             :key="item.name"
             :href="item.href"
             @click="activeSection = item.href"
-            class="relative px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-200"
+            class="relative px-2 py-2 text-[11px] xl:px-2.5 xl:text-xs font-semibold rounded-lg transition-all duration-200"
             :class="[
               activeSection === item.href
                 ? 'text-white font-semibold bg-indigo-600/90 shadow-sm shadow-indigo-500/30'
@@ -67,7 +47,7 @@
         </div>
 
         <!-- Desktop Action Buttons -->
-        <div class="hidden sm:flex items-center gap-2 sm:gap-2.5">
+        <div class="header-actions hidden lg:flex items-center gap-2">
           <!-- Theme Toggle -->
           <button
             @click="toggleTheme"
@@ -90,7 +70,7 @@
             href="/cv.pdf"
             target="_blank"
             download="Achraf_Zarroug_CV.pdf"
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-750 transition-colors border border-slate-700/80 hover:border-slate-600"
+            class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl text-[11px] font-semibold text-slate-200 bg-white/[0.035] hover:bg-white/[0.08] transition-colors border border-violet-300/20"
           >
             <svg class="w-3.5 h-3.5 text-indigo-400 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 01-2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -111,10 +91,11 @@
         </div>
 
         <!-- Mobile Menu Toggle Button -->
-        <div class="flex items-center gap-1 md:hidden">
+        <div class="header-mobile-actions flex items-center gap-4 lg:hidden">
+          <span class="text-xs font-bold tracking-[0.18em] text-slate-300">FR</span>
           <button
             @click="toggleTheme"
-            class="p-2 rounded-lg text-slate-300 hover:text-white"
+            class="hidden"
             aria-label="Changer de thème"
           >
             <svg v-if="isDark" class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +108,7 @@
 
           <button
             @click="mobileMenuOpen = !mobileMenuOpen"
-            class="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none"
+            class="p-2 rounded-xl text-violet-200 hover:text-white hover:bg-white/10 focus:outline-none"
             aria-label="Menu de navigation"
           >
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -149,7 +130,7 @@
       >
         <div
           v-if="mobileMenuOpen"
-          class="md:hidden mt-2 p-3 rounded-2xl glass-panel border border-white/10 shadow-2xl shadow-black/60 space-y-1.5"
+          class="mt-3 ml-auto w-full max-w-xs p-3 rounded-2xl glass-panel border border-violet-300/15 shadow-2xl shadow-black/60 space-y-1.5"
         >
           <a
             v-for="item in navigation"
@@ -159,7 +140,7 @@
             class="block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
             :class="[
               activeSection === item.href
-                ? 'text-white bg-indigo-600 font-semibold'
+                ? 'text-white bg-violet-600/70 font-semibold'
                 : 'text-slate-300 hover:text-white hover:bg-white/5'
             ]"
           >
@@ -204,9 +185,12 @@ const scrollProgress = ref(0)
 const isDark = ref(true)
 
 const navigation = [
-  { name: 'Accueil', href: '#home' },
-  { name: 'À propos & Parcours', href: '#about' },
-  { name: 'Réalisations', href: '#projects' },
+  { name: 'À propos', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Compétences', href: '#skills' },
+  { name: 'Expérience', href: '#experience' },
+  { name: 'Formation', href: '#education' },
+  { name: 'Projets', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ]
 
@@ -231,7 +215,7 @@ const handleScroll = () => {
   scrollProgress.value = totalHeight > 0 ? (currentScroll / totalHeight) * 100 : 0
 
   // Detect active section
-  const sections = ['home', 'about', 'projects', 'contact']
+  const sections = ['home', 'about', 'services', 'skills', 'experience', 'education', 'projects', 'contact']
   const scrollPosition = currentScroll + 200
 
   for (const section of sections) {

@@ -1,101 +1,61 @@
 <template>
-  <div class="py-10 relative overflow-hidden border-y border-white/5 bg-slate-950/60 backdrop-blur-md">
-    <!-- Gradient Fade Masks on sides -->
-    <div class="absolute left-0 inset-y-0 w-24 sm:w-36 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute right-0 inset-y-0 w-24 sm:w-36 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-indigo-500 animate-ping"></span>
-        <p class="text-xs font-mono uppercase tracking-widest text-slate-400">
-          Écosystème & Stack Technique Maîtrisée
-        </p>
-      </div>
-      <span class="text-xs font-mono text-indigo-400/80 hidden sm:inline-block">.NET 8 • Vue 3 • Cloud & Architecture</span>
-    </div>
-
-    <!-- Row 1: Forward Marquee -->
-    <div class="marquee-wrapper flex overflow-hidden select-none mb-3">
-      <div class="marquee-track flex gap-4 animate-marquee py-1">
-        <div
-          v-for="(tech, idx) in row1"
-          :key="'r1-a-' + idx"
-          class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800/80 text-slate-200 hover:border-indigo-500/50 hover:bg-slate-850 hover:text-white transition-all duration-300 shrink-0 group shadow-sm"
-        >
-          <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: tech.color }"></span>
-          <span class="text-sm font-semibold tracking-tight">{{ tech.name }}</span>
-          <span class="text-[11px] font-mono text-slate-500 group-hover:text-slate-400">{{ tech.role }}</span>
-        </div>
-      </div>
-      <!-- Duplicate for seamless infinite loop -->
-      <div class="marquee-track flex gap-4 animate-marquee py-1" aria-hidden="true">
-        <div
-          v-for="(tech, idx) in row1"
-          :key="'r1-b-' + idx"
-          class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800/80 text-slate-200 hover:border-indigo-500/50 hover:bg-slate-850 hover:text-white transition-all duration-300 shrink-0 group shadow-sm"
-        >
-          <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: tech.color }"></span>
-          <span class="text-sm font-semibold tracking-tight">{{ tech.name }}</span>
-          <span class="text-[11px] font-mono text-slate-500 group-hover:text-slate-400">{{ tech.role }}</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2: Reverse Marquee -->
-    <div class="marquee-wrapper flex overflow-hidden select-none">
-      <div class="marquee-track flex gap-4 animate-marquee-reverse py-1">
-        <div
-          v-for="(tech, idx) in row2"
-          :key="'r2-a-' + idx"
-          class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800/80 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-850 hover:text-white transition-all duration-300 shrink-0 group shadow-sm"
-        >
-          <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: tech.color }"></span>
-          <span class="text-sm font-semibold tracking-tight">{{ tech.name }}</span>
-          <span class="text-[11px] font-mono text-slate-500 group-hover:text-slate-400">{{ tech.role }}</span>
-        </div>
-      </div>
-      <!-- Duplicate for seamless infinite loop -->
-      <div class="marquee-track flex gap-4 animate-marquee-reverse py-1" aria-hidden="true">
-        <div
-          v-for="(tech, idx) in row2"
-          :key="'r2-b-' + idx"
-          class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800/80 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-850 hover:text-white transition-all duration-300 shrink-0 group shadow-sm"
-        >
-          <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: tech.color }"></span>
-          <span class="text-sm font-semibold tracking-tight">{{ tech.name }}</span>
-          <span class="text-[11px] font-mono text-slate-500 group-hover:text-slate-400">{{ tech.role }}</span>
-        </div>
-      </div>
+  <div class="role-ribbon" aria-label="Ingénieur logiciel · Développeur Full-Stack · Architecte logiciel">
+    <div class="role-ribbon-track" aria-hidden="true">
+      <template v-for="copy in 2" :key="copy">
+        <span v-for="(role, index) in roles" :key="`${copy}-${index}`" class="role-ribbon-item">
+          {{ role }} <i>✦</i>
+        </span>
+      </template>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const row1 = [
-  { name: '.NET 8 / C#', role: 'Core Backend', color: '#512bd4' },
-  { name: 'Vue.js 3', role: 'Frontend Core', color: '#42b883' },
-  { name: 'TypeScript', role: 'Type Safety', color: '#3178c6' },
-  { name: 'ASP.NET Core', role: 'REST APIs', color: '#6366f1' },
-  { name: 'Entity Framework', role: 'ORM', color: '#a855f7' },
-  { name: 'Clean Architecture', role: 'Design Pattern', color: '#06b6d4' },
-  { name: 'Docker', role: 'Containers', color: '#2496ed' },
-  { name: 'SQL Server', role: 'RDBMS', color: '#cc292b' },
-]
-
-const row2 = [
-  { name: 'Tailwind CSS', role: 'Modern Styling', color: '#38bdf8' },
-  { name: 'Python / FastAPI', role: 'AI & Microservices', color: '#3776ab' },
-  { name: 'MySQL', role: 'Database', color: '#00758f' },
-  { name: 'Pinia / Vite', role: 'State & Tooling', color: '#ffd859' },
-  { name: 'Git & GitHub', role: 'Version Control', color: '#f05032' },
-  { name: 'JWT & OAuth2', role: 'Security & Auth', color: '#10b981' },
-  { name: 'Postman', role: 'API Testing', color: '#ff6c37' },
-  { name: 'Vercel & CI/CD', role: 'DevOps / Deploy', color: '#ffffff' },
+const roles = [
+  'Ingénieur logiciel',
+  'Développeur Full-Stack',
+  'Architecte logiciel',
+  '.NET & Vue.js'
 ]
 </script>
 
 <style scoped>
-.marquee-wrapper:hover .marquee-track {
-  animation-play-state: paused;
+.role-ribbon {
+  position: relative;
+  z-index: 2;
+  width: 106%;
+  margin: -22px -3% 32px;
+  overflow: hidden;
+  transform: rotate(-2.2deg);
+  border-top: 1px solid rgba(176, 111, 255, .16);
+  border-bottom: 1px solid rgba(176, 111, 255, .16);
+  background: rgba(8, 6, 17, .9);
+  box-shadow: 0 10px 40px rgba(38, 13, 67, .18);
 }
+.role-ribbon-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: clamp(28px, 6vw, 90px);
+  padding: 18px 0;
+  animation: role-ribbon-scroll 30s linear infinite;
+}
+.role-ribbon:hover .role-ribbon-track { animation-play-state: paused; }
+.role-ribbon-item {
+  white-space: nowrap;
+  color: #e5d7f5;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(17px, 2vw, 25px);
+  font-style: italic;
+  font-weight: 600;
+}
+.role-ribbon-item i {
+  margin-left: clamp(16px, 3vw, 42px);
+  color: #bd78ff;
+  font-family: sans-serif;
+  font-style: normal;
+  text-shadow: 0 0 18px rgba(189, 120, 255, .9);
+}
+@keyframes role-ribbon-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .role-ribbon-track { animation: none; } }
 </style>
